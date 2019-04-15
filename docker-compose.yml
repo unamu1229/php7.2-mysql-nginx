@@ -3,3 +3,5 @@ services:
   php:
     container_name: php
     build: ./php
+    volumes:
+      - /Users/unamu/Desktop/git/html/php7.2-mysql-nginx/laravel:/var/www/html/laravel
