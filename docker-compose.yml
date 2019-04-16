@@ -5,3 +5,13 @@ services:
     build: ./php
     volumes:
       - /Users/unamu/Desktop/git/html/php7.2-mysql-nginx/laravel:/var/www/html/laravel
+  web:
+    container_name: web
+    image: nginx:1.13.5-alpine
+    ports:
+      - "80:80"
+    depends_on:
+      - php
+    volumes:
+      - ./web/default.conf:/etc/nginx/conf.d/default.conf
+      - /Users/unamu/Desktop/git/html/php7.2-mysql-nginx/laravel:/var/www/html/laravel
