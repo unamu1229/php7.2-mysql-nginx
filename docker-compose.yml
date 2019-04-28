@@ -5,6 +5,7 @@ services:
     build: ./php
     volumes:
       - /Users/unamu/Desktop/git/html/php7.2-mysql-nginx/laravel:/var/www/html/laravel
+
   web:
     container_name: web
     image: nginx:1.13.5-alpine
@@ -15,3 +16,15 @@ services:
     volumes:
       - ./web/default.conf:/etc/nginx/conf.d/default.conf
       - /Users/unamu/Desktop/git/html/php7.2-mysql-nginx/laravel:/var/www/html/laravel
+
+  db:
+    container_name: db
+    image: mysql:5.7.19
+    env_file: .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - /Users/unamu/Desktop/Docker/db:/var/lib/mysql
+
+volumes:
+  db-data:
