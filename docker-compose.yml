@@ -24,7 +24,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - /Users/unamu/Desktop/Docker/db:/var/lib/mysql
+      - db-data:/var/lib/mysql
 
 volumes:
   db-data:
