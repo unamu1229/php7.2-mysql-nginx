@@ -5,6 +5,8 @@ services:
     build: ./php
     volumes:
       - /Users/unamu/Desktop/git/html/php7.2-mysql-nginx/laravel:/var/www/html/laravel
+      - ./php/php.ini:/usr/local/etc/php/conf.d/php.ini
+
 
   web:
     container_name: web
